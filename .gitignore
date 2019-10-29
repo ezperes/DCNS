@@ -1,2 +1,3 @@
 # Git Ignore file for Dream Company Network Services development
 __pycache__/
+DLicenser_v1.0.py
