@@ -8,3 +8,6 @@ datagram = "08574224723 12345 20191028"
 print(datagram.split()[0])
 
 
+
+
+
