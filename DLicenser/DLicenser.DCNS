@@ -1,0 +1,3 @@
+#!/bin/bash
+# Starts the service Python script
+python /DCNS/DLicenser/DLicenser.py
