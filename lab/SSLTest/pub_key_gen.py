@@ -15,5 +15,9 @@ public_key = private_key.public_key()
 
 # Write public key to disk
 with open("public_key.pem", "wb") as public_key_file:
-	
+	public_key_file.write(public_key.public_bytes(
+		encoding=serialization.Encoding.PEM,
+		format=serialization.PublicFormat.SubjectPublicKeyInfo,
+		))
+
 

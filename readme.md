@@ -14,8 +14,7 @@ The objective of this folder is to bear the network services scripts, source cod
 	2. The name must _coincide_ the folder name with the _.DCNS_ file extension 
 3. Each service directory must have a subdirectory called _"DEV"_, to serve as development environment, containing all source code files and respective dependancies
 	1. Dependencies to be shared between DCNS services can be stores in DNCS borne directories
-		1. /DCNS/lib
-		2. /DCNS/var
-		3. /DCNS/var/lib
-		4. /DCNS/tmp
+		1. /DCNS/lib	  # Inter-services common libraries, as binaries or as scripts     
+		2. /DCNS/var	  # Inter-service data which must subsist in-between server sessions
+		3. /DCNS/tmp	  # Inter-service data which can be flushed away on once a regular basis and on each new server session
 
