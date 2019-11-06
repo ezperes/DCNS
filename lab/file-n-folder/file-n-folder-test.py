@@ -24,7 +24,7 @@ from os import path
 
 # Defines key file path and name
 file_name_root = "testfile"
-workingdir = "/DCNS/lab/file-n-folder/sandbox/"
+workingdir = "/DCNS/lab/sandbox/"
 
 
 
@@ -37,10 +37,10 @@ def next_file_nr():
     # The magic begins here
     if not file_exist_P:
         # If file does not exist
-        return 1
+        #return 1
         
-        # with open(workingdir+file_name_root,"a") as new_file:
-        #     new_file.write("This is the file # 1")
+         with open(workingdir+file_name_root,"a") as new_file:
+             new_file.write("This is the file # 1")
     else:
         # 
         greatest=0
@@ -50,17 +50,26 @@ def next_file_nr():
                     try:
                         file_seq = myfile.name.split(".")[2]
                         if file_seq.isalnum():
-                            print(myfile.name)
+                            #print(myfile.name)
                             seq = int(file_seq)
                             greatest = seq if seq > greatest else greatest
-                            print(seq)
-                            print("Greatest is "+str(greatest)+"\n")
+                            print(seq,"old file(s)")
+                            #print("Greatest is "+str(greatest)+"\n")
                     except:
                         print(myfile.name)
                         print("File ends in \".old\", but doesn't follow the pattern\n")
             print("The final great count is",greatest,", and the next element shall be",greatest+1)
+        try:   
+            os.rename(workingdir + file_name_root, workingdir+"."+file_name_root+"."+str(greatest+1)+".old")
+            with open(workingdir+file_name_root,"a") as new_file:
+                new_file.write("This is the file # "+str(greatest+2))
+        except:
+            print("Last file doesn't follow the pattern\n")
+        #print(workingdir+"."+file_name_root+"."+str(greatest+1)+".old")
 
-           
+
+next_file_nr()
+
 '''
 if file_exist_P == True :
 
